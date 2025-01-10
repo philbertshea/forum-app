@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button, Container, Typography } from "@mui/material";
 
 interface User {
-    id: number;
-    username: string;
+    ID: number;
+    Username: string;
 }
 
 function AllUsers() {
@@ -48,7 +48,7 @@ function AllUsers() {
             <h1>All Users</h1>
             <ul>
                 {users.map((user) => (
-                    <li>{user.id} - {user.username}</li>
+                    <li>{user.ID} - {user.Username}</li>
                 ))}
             </ul>
         </Container>
