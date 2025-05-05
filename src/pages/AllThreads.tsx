@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {ThreadCard} from "./ThreadCard.tsx";
 
 interface Thread {
     ID: number;
@@ -6,7 +7,6 @@ interface Thread {
     Title: string;
     Content: string;
 }
-
 
 function AllThreads() {
     
@@ -24,7 +24,7 @@ function AllThreads() {
     
             if (response.ok) {
                 const data : Thread[] = await response.json();
-                setThreads(data)
+                setThreads(data);
                 setMessage(`Got users successfully. ${data}`);
             } else {
                 setMessage(`Failed to get users.`);
@@ -43,9 +43,9 @@ function AllThreads() {
 
     return (
         <ul>
-            {threads.map((thread) => (
-                <li>{thread.UserID} - {thread.Title} - {thread.Content}</li>
-            ))}
+            {threads.reverse().map((thread) =>
+                <ThreadCard id={thread.ID} userId={thread.UserID}
+                            title={thread.Title} content={thread.Content} />)}
         </ul>
     )
 }

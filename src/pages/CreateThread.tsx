@@ -39,6 +39,7 @@ function CreateThread() {
 
             if (response.ok) {
                 setMessage(`Thread by ${userid} titled ${title} of content ${content} created successfully. ${count}`);
+                window.location.href = "/dashboard";
 
             } else if (response.status === 409) {
                 setMessage(`User already exists. ${count}`);
