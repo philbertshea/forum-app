@@ -41,12 +41,12 @@ function Login() {
 
     return (
         <Container maxWidth="sm">
-            <h1>{message}</h1>
             <Typography variant="h4" component="h1" gutterBottom>
                 Log in
             </Typography>
             <TextField fullWidth label="username" value={username} onChange={(e) => setUsername(e.target.value)} />
             <Button fullWidth color="primary" onClick={handleLogin}>Log In</Button>
+            <h3 style={{color: "red"}}>{message}</h3>
         </Container>
     )
 }

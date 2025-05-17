@@ -35,12 +35,12 @@ function Register() {
 
     return (
         <Container maxWidth="sm">
-            <h1>{message}</h1>
             <Typography variant="h4" component="h1" gutterBottom>
                 Register
             </Typography>
             <TextField fullWidth label="username" value={username} onChange={(e) => setUsername(e.target.value)} />
             <Button fullWidth color="primary" onClick={handleRegister}>Register</Button>
+            <h3 style={{color: "red"}}>{message}</h3>
         </Container>
     );
 }

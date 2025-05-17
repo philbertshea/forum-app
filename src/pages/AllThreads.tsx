@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {ThreadCard} from "./ThreadCard.tsx";
+import {Container} from "@mui/material";
 
 interface Thread {
     ID: number;
@@ -42,11 +43,11 @@ function AllThreads() {
     }, []); // Empty dependency array ensures this runs only once
 
     return (
-        <ul>
+        <Container>
             {threads.reverse().map((thread) =>
                 <ThreadCard id={thread.ID} userId={thread.UserID}
                             title={thread.Title} content={thread.Content} />)}
-        </ul>
+        </Container>
     )
 }
 
